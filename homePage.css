@@ -1,0 +1,531 @@
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #004aba;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.navbar-container {
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+  border-radius:40px;
+}
+
+.site-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffffff;
+  flex-grow: 1;
+}
+
+.hamburger {
+  display: none;
+  background:none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  background-color: #0468ff;
+  border-radius: 10px;
+}
+
+.nav-links a:hover {
+  color: #27ae60;
+}
+.nav-links.show{
+  background-color:rgb(12, 0, 139)
+  border=none;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    color: #2c3e50;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #ffffffee;
+    padding: 10px 0;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    animation: slideDown 0.3s ease;
+  }
+
+  .nav-links a {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+
+  .hero-banner {
+    background: url('CURATENIE\ NON-STOP-6.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    text-align: center;
+    position: relative;
+    color: white;
+  }
+  
+  .hero-banner::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    animation: fadeIn 1.2s ease-out;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+    color: #f0f0f0;
+  }
+  
+  .cta-button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right, #3db2ff, #0088cc);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  
+  .cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 1.8rem;
+    }
+  
+    .hero-content p {
+      font-size: 1rem;
+    }
+  
+    .cta-button {
+      font-size: 1rem;
+      padding: 10px 24px;
+    }
+  }
+  .servicii {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color:#0468ff
+  }
+  .servicii h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: #ffffff;
+  }
+  .servicii-grid {
+    display: grid;
+    gap: 25px;
+
+    grid-template-columns: 1fr;
+  }
+  .serviciu {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  .serviciu:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgb(0 0 0 / 0.15);
+  }
+  .serviciu img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 12px;
+  }
+  
+  .serviciu p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #34495e;
+    margin: 0;
+  }
+  
+
+  @media (min-width: 600px) and (max-width: 1023px) {
+    .servicii-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+
+  @media (min-width: 1024px) {
+    .servicii-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  
+  .whatsapp-call-to-action {
+    text-align: center;
+    margin-top: 40px;
+    color:white;
+  }
+  .whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #25D366;
+    color: white;
+    padding: 12px 20px;
+    font-weight: 700;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+  }
+  .whatsapp-button:hover {
+    background-color: #1ebe57;
+  }
+  .whatsapp-button img {
+    width: 24px;
+    height: 24px;
+  }
+  
+
+  .avantaje {
+    padding: 80px 20px;
+    background: #0468ff;
+    text-align: center;
+  }
+  
+  .avantaje h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: #ffffff;
+    font-weight: 700;
+  }
+  
+  .avantaje-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .avantaj-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .avantaj-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .avantaj-card i {
+    font-size: 2.2rem;
+    color: #25D366;
+    margin-bottom: 15px;
+  }
+  
+  .avantaj-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+    font-weight: 600;
+  }
+  
+  .avantaj-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  .testimoniale {
+    padding: 80px 20px;
+    background: #0468ff;
+    text-align: center;
+  }
+  
+  .testimoniale h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: #ffffff;
+    font-weight: 700;
+  }
+  
+  .testimoniale-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .testimonial-card {
+    background: #f9f9f9;
+    padding: 30px 25px;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .testimonial-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  
+  .testimonial-stars {
+    color: #ffc107;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+  }
+  
+  .testimonial-card p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  
+  .testimonial-card h4 {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 600;
+  }
+  .contact-cta {
+    padding: 80px 20px;
+    background: #0468ff;
+    text-align: center;
+  }
+  .contact-cta-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.8;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgb(245, 245, 245);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(3px);
+  
+}
+  .contact-cta h2 {
+    font-size: 2rem;
+    color: black;
+    margin-bottom: 15px;
+  }
+  
+  .contact-cta p {
+    font-size: 1.1rem;
+    color: black;
+    margin-bottom: 35px;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px;
+    font-size: 1.05rem;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .cta-btn:hover {
+    transform: scale(1.05);
+  }
+  
+  .whatsapp {
+    background-color: #25D366;
+  }
+  
+  .phone {
+    background-color: #0a66c2;
+  }
+  
+  .email {
+    background-color: #ff6f00;
+  }
+  
+  .despre-noi {
+  background:#0468ff ;
+  color: white;
+  padding: 80px 20px;
+  transition: background 0.4s ease;
+}
+
+.despre-noi-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.8;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(3px);
+}
+
+.despre-noi h2 {
+  font-size: 2.3rem;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.despre-noi p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .despre-noi-wrapper {
+    padding: 20px;
+  }
+
+  .despre-noi h2 {
+    font-size: 1.8rem;
+  }
+
+  .despre-noi p {
+    font-size: 1rem;
+  }
+}
+.site-footer {
+  background-color: #fff;
+  color: #000;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  border-top: 1px solid #ccc;
+}
+.site-footer p {
+  margin: 5px 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.facebook-follow {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.facebook-button {
+  background-color: #1877f2; 
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.facebook-button:hover {
+  background-color: #145dbf;
+}
